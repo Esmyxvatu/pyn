@@ -1,0 +1,6 @@
+
+# Ignore all file in the /other/ directory
+other/
+__pycache__/
+pyn.log
+samples/
