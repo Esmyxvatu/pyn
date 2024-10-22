@@ -1,0 +1,35 @@
+name: Upload Python Package
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+    - name: Create setup.py
+      run: |
+        echo "from setuptools import setup" > setup.py
+        echo "setup(name='pyn', version='0.1.0', py_modules=['pyn'], install_requires=['aiofiles>=24.1.0'])" >> setup.py
+    - name: Build package
+      run: python -m build
+    - name: Publish package
+      env:
+        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: twine upload dist/*
+
