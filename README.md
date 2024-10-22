@@ -23,7 +23,7 @@ Pyn support both HTTP and WebSocket.
 
 ----------------------------------------------
 
-### [HTTP](http.md)
+### [HTTP](doc/http.md)
 
 ```python	
 import pyn
@@ -135,7 +135,7 @@ server.run(
 
 
 
-### [WebSocket](websocket.md)
+### [WebSocket](doc/websocket.md)
 
 ```python
 import pyn
@@ -198,7 +198,7 @@ The `debug` option will just activate or deactivate some log messages. It's reco
 
 ----------------------------------------------
 
-### [Logger](logger.md)
+### [Logger](doc/logger.md)
 
 ```python
 import pyn
@@ -221,6 +221,7 @@ All exemples are in the `samples` directory
 - Nothing is tested, so things may not work or be buggy.
 - Say to many things in console when you kill the server with Ctrl+C
   > Reason : Need to destroy all tasks before killing the server
+- Crash every sockets when sometimes one disconnect, causing him to lost every connection forever (yeah big bug)
 
 ----------------------------------------------
 

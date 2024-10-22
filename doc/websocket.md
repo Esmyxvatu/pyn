@@ -1,4 +1,4 @@
-# [PYN](README.md)
+# [PYN](../README.md)
 
 ----------
 
