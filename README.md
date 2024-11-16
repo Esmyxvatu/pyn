@@ -111,30 +111,6 @@ server.run(
 
 ----------------------------------------------
 
-#### CORS
-
-```python
-import pyn
-
-router = pyn.Router()
-
-@router.add_route("GET", "/")
-async def index(req: pyn.Request, res: pyn.Response) -> None:
-    await res.send_file("index.html")
-
-server = pyn.Server(router)
-server.run(
-    host="127.0.0.1",
-    port=8000,
-    cors=True
-)
-```
-
-----------------------------------------------
-
-
-
-
 ### [WebSocket](doc/websocket.md)
 
 ```python

@@ -113,3 +113,4 @@ server.run(
 
 ## Future plans
 - Add a `ws.send_except` method
+- Add a system of rooms
