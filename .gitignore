@@ -4,3 +4,5 @@ other/
 __pycache__/
 pyn.log
 samples/
+doc/cry.md
+doc/instru.md

@@ -1,4 +1,5 @@
 # PYN
+
 A simple yet powerful handmade python router framework.
 It's made around the `asyncio` library and supports both HTTP and WebSocket.
 It isn't recommended to use it in production, it's more a project for learning and experimentation.
@@ -7,25 +8,28 @@ You're free to use it, sell it, share it, modify it, whatever you want.
 ----------------------------------------------
 
 ## Requirements
+
 - `aiofiles`    24.1.0
-- `python`      >= 3.8 
+- `python`      >= 3.8
 
 ----------------------------------------------
 
 ## Installation
+
 Just download `pyn.py` and import it in your project. It will be ready to use.
-The file is only 877 lines long and it's only 30.04 Kb.
+The file is only 890 lines long and it's only 30.02 KB.
 
 ----------------------------------------------
 
 ## Usage
+
 Pyn support both HTTP and WebSocket.
 
 ----------------------------------------------
 
 ### [HTTP](doc/http.md)
 
-```python	
+```python
 import pyn
 
 router = pyn.Router()
@@ -53,6 +57,7 @@ async def hello(req: pyn.Request, res: pyn.Response) -> None:
 The `Request` and `Response` classes are simple wrappers around the `aiohttp` classes.
 
 Supported HTTP methods:
+
 - `GET`
 - `POST`
 - `PUT`
@@ -187,21 +192,17 @@ It will log the message to the console and in the `pyn.log` file.
 
 ----------------------------------------------
 
-
-## Examples
-All exemples are in the `samples` directory
-
-
 ## Known issues
 
 - Nothing is tested, so things may not work or be buggy.
 - Say to many things in console when you kill the server with Ctrl+C
-  > Reason : Need to destroy all tasks before killing the server
+    > Reason : Need to destroy all tasks before killing the server
 - Crash every sockets when sometimes one disconnect, causing him to lost every connection forever (yeah big bug)
 
 ----------------------------------------------
 
 ## Contributing
+
 The project is open source. You can fork it and make your own version.
 Contributions are not yet open, but may be in the futur
 
@@ -217,4 +218,5 @@ Contributions are not yet open, but may be in the futur
 ----------------------------------------------
 
 ## License
+
 Pyn is under the [MIT License](LICENSE), so you're free to use it in any way you want.

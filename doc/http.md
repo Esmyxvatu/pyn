@@ -7,8 +7,7 @@
 The http router is made around the `asyncio` library. You can access the real asyncio `response.writer` if needed.
 It supports `GET`, `POST`, `PUT`, `DELETE`, `PATCH` and `OPTIONS` requests by default, but you can "create" your own by using the decorator.
 
-
----------------------------
+----------
 
 ### Adding a route
 
@@ -35,7 +34,7 @@ async def index(req: pyn.Request, res: pyn.Response) -> None:
 router.get("/", index)
 ```
 
--------------
+----------
 
 ### Middleware
 
@@ -59,7 +58,7 @@ async def middleware(req: pyn.Request, res: pyn.Response) -> None:
 router.add_middleware(middleware)
 ```
 
--------------
+----------
 
 ### Static files
 
@@ -75,20 +74,21 @@ async def index(req: pyn.Request, res: pyn.Response) -> None:
     await res.send_file("index.html")
 ```
 
------------
+----------
 
 ### Send functions
 
 You can use three functions to send data to the client:
-  1. `res.send()`, who takes three arguments :
+
+1. `res.send()`, who takes three arguments :
     - content (str): The content to send in the HTTP body.
     - status (int): The HTTP status code. Defaults to 200.
     - content_type (str): The content type of the response. Defaults to "text/html".
 
-  2. `res.send_file()`, who takes one argument :
-    - path (str): The path of the file to send.
+2. `res.send_file()`, who takes one argument :
+        - path (str): The path of the file to send.
 
-  3. `res.send_json()`, who takes two argument :
+3. `res.send_json()`, who takes two argument :
     - data (dict or str): The data to send in the HTTP body. If it's a str, it's treated as a path to a JSON file.
     - status (int): The HTTP status code. Defaults to 200.
 
@@ -104,7 +104,7 @@ async def index(req: pyn.Request, res: pyn.Response) -> None:
     await res.send("Hello World!", status=201)
 ```
 
--------------------------------
+----------
 
 ### Run the server
 
